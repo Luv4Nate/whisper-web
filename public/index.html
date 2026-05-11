@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whisper | Secure Launcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Whisper Secure Launcher</p>
+          <h1>Fast. Clean. Redefined.</h1>
+          <p>
+            Launch Whisper with a premium experience, guided by modern red glass design,
+            seamless scroll animations, and a secure purchase flow.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="button button-primary" id="openRedeemBtn">Download launcher</button>
+            <button class="button button-secondary" id="buyBtn">Purchase $1.99</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="glow-grid"></div>
+          <div class="glass-card">
+            <span class="card-title">Whisper Launcher</span>
+            <p>Instant access to cleaner performance, premium support, and lifetime updates.</p>
+            <div class="card-stats">
+              <div><strong>1.99</strong><span>USD</span></div>
+              <div><strong>Fast</strong><span>Install</span></div>
+              <div><strong>Secure</strong><span>Checkout</span></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section intro" id="features">
+          <div class="section-head">
+            <p class="eyebrow">WHY CHOOSE WHISPER</p>
+            <h2>Sleek performance, powerful security, premium feel.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Dynamic Backgrounds</h3>
+              <p>Visually immersive red gradients and motion to keep the page alive.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Smooth Scrolling</h3>
+              <p>Fluid transitions and subtle hover effects for an elegant experience.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Secure Payments</h3>
+              <p>Built with a backend payment route and server-side receipt delivery.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section product" id="download">
+          <div class="section-head">
+            <p class="eyebrow">PRODUCT</p>
+            <h2>Whisper Launcher</h2>
+          </div>
+          <div class="product-grid">
+            <div class="product-copy">
+              <p>Purchase Whisper for USD $1.99 and receive a secure download link plus automatic email receipt in seconds.</p>
+              <ul>
+                <li>One-time payment</li>
+                <li>Instant receipt delivery</li>
+                <li>Fast install and lightweight launcher</li>
+              </ul>
+              <p class="product-redeem-hint">Already paid? Use the same email and license key from your receipt to download.</p>
+              <button type="button" class="button button-secondary" id="openRedeemBtn2">Redeem license</button>
+            </div>
+            <div class="product-card">
+              <span class="product-badge">Best Value</span>
+              <h3>Whisper Premium</h3>
+              <p>Access the full launcher experience with optional updates and support.</p>
+              <div class="price-block">
+                <span class="price">$1.99</span>
+                <span>/ one-time</span>
+              </div>
+              <button class="button button-primary" id="buyBtn2">Purchase Now</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-overlay" id="purchaseModal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="close-btn" id="closeModal" aria-label="Close purchase modal">×</button>
+        <div class="modal-head">
+          <p class="eyebrow">Secure Checkout</p>
+          <h2>Purchase Whisper for $1.99</h2>
+          <p>Enter your email to receive your receipt and license information instantly.</p>
+        </div>
+        <form id="purchaseForm">
+          <label>
+            Email address
+            <input type="email" id="emailInput" placeholder="you@example.com" required />
+          </label>
+          <button type="submit" class="button button-primary">Continue to Payment</button>
+          <p class="modal-note">Use Stripe test mode with card <strong>4242 4242 4242 4242</strong> to try without paying.</p>
+          <div class="purchase-status" id="purchaseStatus"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="redeemModal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="close-btn" id="closeRedeemModal" aria-label="Close redeem modal">×</button>
+        <div class="modal-head">
+          <p class="eyebrow">Download</p>
+          <h2>Redeem your license</h2>
+          <p>Enter the email you used at checkout and the license key from your receipt email.</p>
+        </div>
+        <form id="redeemForm">
+          <label>
+            Email address
+            <input type="email" id="redeemEmailInput" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+          <label>
+            License key
+            <input type="text" id="redeemLicenseInput" placeholder="xxxxx-xxxxx-xxxxx-xxxxx-xxxxx" required spellcheck="false" autocapitalize="off" />
+          </label>
+          <button type="submit" class="button button-primary">Verify &amp; download</button>
+          <div class="purchase-status" id="redeemStatus"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
